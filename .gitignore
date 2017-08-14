@@ -1,4 +1,9 @@
-hydra/*
 */*.png
+*/*/*.png
 */*.xcf
+*/*/*.xcf
 .DS_Store
+
+*.pyc
+*/*.pyc
+*/*/*.pyc
