@@ -6,6 +6,7 @@ import subprocess
 import pdb
 import datetime
 import os
+import time
 from threading import Thread
 
 def index(request):
@@ -20,13 +21,17 @@ def jobs(request):
         filename = fs.save(graphic.name, graphic)
         uploaded_file_url = fs.url(filename)
         template_path = os.getcwd() + "/hydra/assets/preview.xcf"
-        static_path = "/static/output/preview_" + datetime.datetime.now().isoformat() +'.png'
+        static_path = "/static/output/preview_" + datetime.datetime.now().isoformat() +'.jpeg'
         result_path = os.getcwd() + static_path
         graphic_url = "/Users/abdul/Documents/projects/serpiente/media/" + graphic.name
+        start = time.time()
+        print "Processing starting"
         thread = Thread(target = ImageProcessing, args = (template_path, graphic_url, result_path, ))
         # ImageProcessing(template_path, graphic_url, result_path)
         thread.start()
         thread.join()
+        end = time.time()
+        print "Processing finished", end - start
         return render(request, 'preview.html', {
                 "image": static_path
             }

@@ -53,16 +53,16 @@ def graphic_replace(template_path, graphic_path, result_path):
 # >>> color.layers[0].fill(1)
 	print "Save Document"
 	start = time.time()
-	image.remove_layer(replace)
+	# image.remove_layer(replace)
 
-	new_image = pdb.gimp_image_duplicate(image)
+	# new_image = pdb.gimp_image_duplicate(image)
 
-	layer = pdb.gimp_image_merge_visible_layers(new_image, 1)
+	layer = pdb.gimp_image_merge_visible_layers(image, 1)
 
 	# pdb.gimp_file_save(new_image, layer, result_path, '?')
-	pdb.file_jpeg_save(new_image, layer, result_path, result_path, 1.0, 1.0, 1, 1, "comment", 3, 1, 1, 1)
+	pdb.file_jpeg_save(image, layer, result_path, result_path, 1.0, 1.0, 1, 1, "comment", 3, 1, 1, 1)
 	# pdb.file_jpeg_save(new_image, layer, result_path, result_path, 0, 0, 0, 0, 0, 0, 0)
-	pdb.gimp_image_delete(new_image)
+	# pdb.gimp_image_delete(new_image)
 	end = time.time()
 	print "Saved Document: ", end - start
 
