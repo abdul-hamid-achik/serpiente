@@ -24,6 +24,7 @@ class ImageProcessing:
 		self.template = "\"" + template + "\"" 
 		self.graphic = "\"" + graphic + "\"" 
 		self.result = "\"" + result + "\"" 
+		self.run()
 
 	def run(self):
 		gimp_path = "/Applications/GIMP.app/Contents/MacOS/GIMP"
