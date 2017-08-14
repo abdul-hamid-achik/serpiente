@@ -3,7 +3,7 @@
 */*.xcf
 */*/*.xcf
 .DS_Store
-
+*.sqlite3
 *.pyc
 */*.pyc
 */*/*.pyc
