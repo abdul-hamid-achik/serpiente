@@ -1,0 +1,18 @@
+{# Load the tag library #}
+{% load bootstrap3 %}
+
+{# Load CSS and JavaScript #}
+{% bootstrap_css %}
+
+{% load static %}
+
+<script src="{% static 'jquery.js' %}"></script>
+
+{% bootstrap_javascript %}
+
+{# Display django.contrib.messages as Bootstrap alerts #}
+{% bootstrap_messages %}
+
+<div class="container">
+	<img class="img-responsive" src="{{ image }}" />
+</div>
