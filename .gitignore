@@ -1,0 +1,4 @@
+hydra/*
+*/*.png
+*/*.xcf
+.DS_Store
